@@ -23,6 +23,7 @@ pipeline {
 		    script {
 			def customImage = docker.build('mzm1/devopjava', "./docker")
 		        docker.withRegistry('', 'dockerhub') {
+			sh "docker login -u mzm1 -p Subzero_79"
 			customImage.push("${env.BUILD_NUMBER}")
 		                    }
 		         }
