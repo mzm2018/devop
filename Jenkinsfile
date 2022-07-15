@@ -22,11 +22,9 @@ pipeline {
 		steps {
 		    script {
 			def customImage = docker.build('mzm1/devopjava', "./docker")
-                        withCredentials([usernamePassword( credentialsId: 'dockerhub', usernameVariable: 'mzm1', passwordVariable: 'Subzero_79')]) {
 		        docker.withRegistry('', 'dockerhub') {
-			sh "docker login -u ${USERNAME} -p ${PASSWORD}"
 			customImage.push("${env.BUILD_NUMBER}")
-		                    }}
+		                    }
 		         }
 	              }
            }
