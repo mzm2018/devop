@@ -21,7 +21,7 @@ pipeline {
 	stage('Build docker image') {
 		steps {
 		    script {
-			def customImage = docker.build('mzm1/devopJava', "./docker")
+			def customImage = docker.build('mzm1/devopjava', "./docker")
 		        docker.withRegistry('https://registry.hub.docker', 'dockerhub') {
 			customImage.push("${env.BUILD_NUMBER}")
 		                    }
