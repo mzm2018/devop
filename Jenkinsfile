@@ -23,7 +23,7 @@ pipeline {
 		    script {
 			def customImage = docker.build('mzm1/devopjava', "./docker")
 		        docker.withRegistry('', 'dockerhub') {
-			customImage.push("${env.BUILD_NUMBER}")
+			customImage.push("latest")
 		                    }
 		         }
 	              }
