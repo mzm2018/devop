@@ -26,7 +26,7 @@ pipeline {
 		        docker.withRegistry('', 'dockerhub') {
 			sh "docker login -u ${USERNAME} -p ${PASSWORD}"
 			customImage.push("${env.BUILD_NUMBER}")
-		                    }
+		                    }}
 		         }
 	              }
            }
