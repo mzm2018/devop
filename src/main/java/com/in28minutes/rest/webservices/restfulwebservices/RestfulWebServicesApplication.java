@@ -1,12 +1,12 @@
-package com.example.devops;
+package com.in28minutes.rest.webservices.restfulwebservices;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DevopsApplication {
+public class RestfulWebServicesApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DevopsApplication.class, args);
+		SpringApplication.run(RestfulWebServicesApplication.class, args);
 	}
 }
