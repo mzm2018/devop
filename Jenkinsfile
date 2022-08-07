@@ -28,7 +28,11 @@ pipeline {
 		         }
 	              }
            }
-
+     stage('Remove Unused docker image') {
+      steps{
+         sh "docker rmi devopjava:latest"
+	  }
+      }
         }
         
      }
