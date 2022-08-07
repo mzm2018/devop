@@ -22,7 +22,7 @@ pipeline {
 		steps {
 		    script {
 			def customImage = docker.build('loclahost:8085/devopjava', "./docker")
-		        docker.withRegistry('localhost:8085', 'dockerhub') {
+		        docker.withRegistry('http://localhost:8085', 'nexusdockercredential') {
 			customImage.push("latest")
 		                    }
 		         }
