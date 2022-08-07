@@ -21,7 +21,7 @@ pipeline {
 	stage('Build docker image') {
 		steps {
 		    script {
-			def customImage = docker.build('localhost:8085/devopjava', "./docker")
+			def customImage = docker.build('devopjava', "./docker")
 		        docker.withRegistry('http://localhost:8085', 'nexusdockercredential') {
 			customImage.push("latest")
 		                    }
