@@ -35,7 +35,7 @@ pipeline {
       }
 	   stage('build new job') {
       steps{
-         build quietPeriod: 10, job: 'mzmtestpipeline'
+         build job: 'downstreamjob', parameters: [string(name: 'BUILDNUMBER', value: env.BUILD_NUMBER)]
 	  }
       }
         }
