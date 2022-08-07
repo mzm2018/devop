@@ -21,8 +21,8 @@ pipeline {
 	stage('Build docker image') {
 		steps {
 		    script {
-			def customImage = docker.build('mzm1/devopjava', "./docker")
-		        docker.withRegistry('', 'dockerhub') {
+			def customImage = docker.build('loclahost:8085/devopjava', "./docker")
+		        docker.withRegistry('localhost:8085', 'dockerhub') {
 			customImage.push("latest")
 		                    }
 		         }
