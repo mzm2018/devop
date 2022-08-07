@@ -33,6 +33,11 @@ pipeline {
          sh "docker rmi devopjava:latest"
 	  }
       }
+	   stage('build new job') {
+      steps{
+         build quietPeriod: 10, job: 'mzmtestpipeline'
+	  }
+      }
         }
         
      }
