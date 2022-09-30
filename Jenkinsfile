@@ -30,7 +30,7 @@ pipeline {
            }
      stage('Remove Unused docker image') {
       steps{
-	      sh "docker rmi devopjava:${env.BUILD_NUMBER}"
+	      sh "docker rmi mzm1/devopjava:${env.BUILD_NUMBER}"
 	  }
       }
 	   stage('build new job') {
