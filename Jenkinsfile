@@ -21,16 +21,16 @@ pipeline {
 	stage('Build docker image') {
 		steps {
 		    script {
-			def customImage = docker.build('devopjava', "./docker")
-		        docker.withRegistry('http://192.168.1.19:8085', 'nexusdockercredential') {
-			customImage.push("latest")
+			def customImage = docker.build('mzm1/devopjava', "./docker")
+		        docker.withRegistry(' ', 'dockerhub') {
+			customImage.push("${env.BUILD_NUMBER}")
 		                    }
 		         }
 	              }
            }
      stage('Remove Unused docker image') {
       steps{
-         sh "docker rmi devopjava:latest"
+	      sh "docker rmi devopjava:${env.BUILD_NUMBER}"
 	  }
       }
 	   stage('build new job') {
